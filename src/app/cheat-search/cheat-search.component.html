@@ -1,0 +1,12 @@
+<div id="search-component">
+    <label for="search-box">Cheat Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+    <ul class="search-result">
+        <li *ngFor="let cheat of cheats$ | async" >
+            <a routerLink="/detail/{{cheat.id}}">
+            {{cheat.name}}
+            </a>
+        </li>
+    </ul>
+</div>

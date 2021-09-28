@@ -1,0 +1,10 @@
+<div *ngIf="cheat">
+    <h2>{{cheat.name}} Details</h2>
+    <div><span>id: </span>{{cheat.id}}</div>
+    <div>
+        <label for="cheat-comments">Cheat Comments: </label>
+        <input id="cheat-comments" [(ngModel)]="cheat.comments" placeholder="comments">
+    </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>

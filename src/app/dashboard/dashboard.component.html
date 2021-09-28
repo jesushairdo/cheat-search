@@ -1,0 +1,9 @@
+<h2>Top Cheats</h2>
+<div class="cheats-menu">
+    <a *ngFor="let cheat of cheats"
+        routerLink="/detail/{{cheat.id}}">
+        {{cheat.name}}
+    </a>
+</div>
+
+<app-cheat-search></app-cheat-search>

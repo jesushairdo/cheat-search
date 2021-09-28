@@ -1,0 +1,35 @@
+<h2>My Cheats</h2>
+<div>
+    <label for="new-cheat">Cheat name:</label>
+    <input id="new-cheat" #cheatName />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(cheatName.value); cheatName.value=''">
+        Add cheat
+    </button>
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>systemName</th>
+        <th>gameName</th>
+        <th>number</th>
+        <th>description</th>
+        <th>code</th>
+        <th>comments</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr *ngFor="let cheat of cheats">
+        <td><a routerLink="/detail/{{cheat.id}}">{{cheat.id}}</a></td>
+        <td>{{cheat.name}}</td>
+        <td>{{cheat.systemName | uppercase}}</td>
+        <td>{{cheat.gameName}}</td>
+        <td>{{cheat.number}}</td>
+        <td>{{cheat.description}}</td>
+        <td>{{cheat.code}}</td>
+        <td><input id="comments" [(ngModel)]="cheat.comments" placeholder="comments" /></td>
+        <td><button class="delete" title="delete cheat" (click)="delete(cheat)">X</button></td>
+    </tr>
+</table>
